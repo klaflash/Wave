@@ -24,7 +24,7 @@ body {
 
 }
 
-.locations {
+#locations {
     display: flex;
     flex-direction: row;
     gap: 1rem;

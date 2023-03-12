@@ -3,7 +3,7 @@ const threshold = 0.05;
 
 for (let location of locations) {
     const node = document.createElement(`${location.name}`)
-    document.getElementById("location").appendChild(node)
+    document.getElementById('locations').appendChild(node)
 }
 
 const successCallback = (position) => {

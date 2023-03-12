@@ -3,8 +3,8 @@ const threshold = 0.1;
 
 const successCallback = (position) => {
     console.log(position);
-    const lat = pos.coords.latitude;
-    const lng = pos.coords.longitude;
+    const lat = position.coords.latitude;
+    const lng = position.coords.longitude;
     const dist = distance(degToRad(lat), degToRad(lng), degToRad(locations[0].latitude), degToRad(locations[0].longitude))
     console.log(dist)
     if (dist < threshold) {

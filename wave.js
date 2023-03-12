@@ -1,8 +1,9 @@
-const locations = [{name:"test", latitude:26.775044, longitude:-80.032890}]
+const locations = [{name:"test", latitude:26.775044, longitude:-80.032890}, {name:"Hub", latitude:40.422203, longitude:-86.906227}]
 const threshold = 0.05;
 
 for (let location of locations) {
     const node = document.createElement(`${location.name}`)
+    node.setAttribute('id', `${location.name}`)
     document.getElementById('locations').appendChild(node)
 }
 
@@ -10,13 +11,20 @@ const successCallback = (position) => {
     console.log(position);
     const lat = position.coords.latitude;
     const lng = position.coords.longitude;
-    const dist = distance(degToRad(lat), degToRad(lng), degToRad(locations[0].latitude), degToRad(locations[0].longitude))
-    console.log(dist)
-    if (dist < threshold) {
-        //full access
-    } else {
-        //restricted access
+
+    for (let location of locations) {
+      const dist = distance(degToRad(lat), degToRad(lng), degToRad(location.latitude), degToRad(location.longitude))
+      console.log(dist)
+      if (dist < threshold) {
+          //full access
+          const node = document.createElement('Review')
+          node.setAttribute('class', 'review')
+          document.getElementById(`${location.name}`).appendChild(node)
+      } else {
+          //restricted access
+      }
     }
+    
   };
   
   const errorCallback = (error) => {

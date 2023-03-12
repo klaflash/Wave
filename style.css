@@ -24,5 +24,14 @@ body {
 
 }
 
+.locations {
+    display: flex;
+    flex-direction: row;
+}
+
+.location {
+    background-color: lightgray;
+    padding: 1rem;
+}
 
 

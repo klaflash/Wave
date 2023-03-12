@@ -19,7 +19,7 @@ const successCallback = (position) => {
       if (dist < threshold) {
           //full access
           const node = document.createElement('Review')
-          node.textContent = 'Review'
+          node.textContent = `Review ${location.name}`
           node.setAttribute('class', 'review')
           document.getElementById(`${location.name}`).appendChild(node)
       } else {

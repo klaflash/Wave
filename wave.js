@@ -3,6 +3,7 @@ const threshold = 0.05;
 
 for (let location of locations) {
     const node = document.createElement(`${location.name}`)
+    node.textContent = `${location.name}`
     node.setAttribute('id', `${location.name}`)
     document.getElementById('locations').appendChild(node)
 }
@@ -18,6 +19,7 @@ const successCallback = (position) => {
       if (dist < threshold) {
           //full access
           const node = document.createElement('Review')
+          node.textContent = 'Review'
           node.setAttribute('class', 'review')
           document.getElementById(`${location.name}`).appendChild(node)
       } else {

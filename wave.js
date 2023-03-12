@@ -1,5 +1,5 @@
 const locations = [{name:"test", latitude:26.775150, longitude:-80.033174}]
-const threshold = 0.1;
+const threshold = 0.2;
 
 const successCallback = (position) => {
     console.log(position);

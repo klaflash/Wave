@@ -1,7 +1,7 @@
 const locations = [{name:"test", latitude:26.775044, longitude:-80.032890}]
 const threshold = 0.05;
 
-for (location in locations) {
+for (let location of locations) {
     const node = document.createElement(`${location.name}`)
     document.getElementById('location').appendChild(node)
 }

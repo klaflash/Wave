@@ -11,7 +11,9 @@ const successCallback = (position) => {
     timeout: 10000,
   };
   
-  if (window.matchMedia("(max-width: 480px)").matches) {
+  const mediaQuery = window.matchMedia('(max-width: 480px)')
+  
+  if (mediaQuery.matches) {
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback, options);
   }
   

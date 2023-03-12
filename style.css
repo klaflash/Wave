@@ -26,12 +26,11 @@ body {
 
 .locations {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .location {
     background-color: lightgray;
-    padding: 1rem;
 }
 
 

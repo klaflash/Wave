@@ -4,6 +4,7 @@ const threshold = 0.05;
 for (let location of locations) {
     const node = document.createElement(`${location.name}`)
     node.textContent = `${location.name}`
+    node.setAttribute('id', `${location.name}`)
     node.setAttribute('class', 'location')
     document.getElementById('locations').appendChild(node)
 }

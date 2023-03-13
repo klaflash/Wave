@@ -139,6 +139,13 @@ input[type="range"] {
   input[type="range"]:focus::-ms-fill-upper {
     background: #ddd;
   }
+
+  #rating {
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
   
   
 

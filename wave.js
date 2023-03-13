@@ -14,10 +14,10 @@ for (let location of locations) {
   document.getElementById(`${location.name}`).addEventListener('click', () => {
     window.location.href = './location.html'
     if (!inRange[location.name]) {
-      document.getElementById('rating').style.display = 'none'
+      window.getElementById('rating').style.display = 'none'
     }
-    document.getElementById('range-message').textContent = 'To rate this location get within range and refresh'
-    document.getElementById('place').textContent = `${location.name}`
+    window.getElementById('range-message').textContent = 'To rate this location get within range and refresh'
+    window.getElementById('place').textContent = `${location.name}`
   })
 }
 

@@ -2,7 +2,7 @@ const locations = [{name:"test", latitude:26.775044, longitude:-80.032890}, {nam
 const threshold = 0.05;
 
 for (let location of locations) {
-    const node = document.createElement(`${location.name}`)
+    const node = document.createElement('button')
     node.textContent = `${location.name}`
     node.setAttribute('id', `${location.name}`)
     node.setAttribute('class', 'location')
@@ -19,7 +19,7 @@ const successCallback = (position) => {
       console.log(dist)
       if (dist < threshold) {
           //full access
-          const node = document.createElement('Review')
+          const node = document.createElement('div')
           node.textContent = `Review ${location.name}`
           node.setAttribute('class', 'review')
           document.getElementById(`${location.name}`).appendChild(node)

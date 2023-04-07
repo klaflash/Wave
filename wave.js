@@ -10,6 +10,12 @@ for (let location of locations) {
     document.getElementById('locations').appendChild(node)
 }
 
+for (let location of locations) {
+  document.getElementById(`${location.name}`).addEventListener('click', () => {
+    window.location.href = './location.html'
+  })
+}
+
 const successCallback = (position) => {
     console.log(position);
     const lat = position.coords.latitude;

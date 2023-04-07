@@ -3,6 +3,8 @@ const threshold = 0.05;
 let inRange = {test:false, hub:false}
 let currentLocation = 'what';
 
+console.log(location.href)
+
 for (let location of locations) {
     const node = document.createElement('button')
     node.textContent = `${location.name}`

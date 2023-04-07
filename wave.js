@@ -1,7 +1,7 @@
 const locations = [{name:"test", latitude:26.775044, longitude:-80.032890}, {name:"Hub", latitude:40.422203, longitude:-86.906227}]
 const threshold = 0.05;
 let inRange = {test:false, hub:false}
-let currentLocation = 'what';
+let currentLocation;
 let onMainPage = true;
 
 console.log(location.href)

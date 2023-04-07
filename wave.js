@@ -3,6 +3,7 @@ const threshold = 0.05;
 let inRange = {test:false, hub:false}
 let currentLocation;
 let onMainPage = true;
+let runOnce = 
 
 console.log(location.href)
 
@@ -22,7 +23,7 @@ if (onMainPage) {
 
   for (let location of locations) {
     document.getElementById(`${location.name}`).addEventListener('click', () => {
-      currentLocation = location
+      currentLocation = this.location
       console.log("Why is this not updating")
       window.location.href = './location.html'
     })

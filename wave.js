@@ -22,8 +22,8 @@ if (onMainPage) {
 
   for (let location of locations) {
     document.getElementById(`${location.name}`).addEventListener('click', () => {
-      window.location.href = './location.html'
       currentLocation = location
+      window.location.href = './location.html'
     })
   }
 

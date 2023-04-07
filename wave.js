@@ -23,8 +23,8 @@ if (onMainPage) {
 
   for (let location of locations) {
     document.getElementById(`${location.name}`).addEventListener('click', () => {
-      currentLocation = this.location
-      console.log("Why is this not updating")
+      currentLocation = this.location.name
+      //console.log("Why is this not updating")
       window.location.href = './location.html'
     })
   }

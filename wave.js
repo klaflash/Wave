@@ -1,9 +1,8 @@
 const locations = [{name:"test", latitude:26.775044, longitude:-80.032890}, {name:"Hub", latitude:40.422203, longitude:-86.906227}]
 const threshold = 0.05;
-let inRange = {test:false, hub:false}
-let currentLocation;
+localStorage.setItem('inRange', `{test:false, hub:false}`)
+localStorage.setItem('currentLocation', 'default');
 let onMainPage = true;
-let runOnce = 
 
 console.log(location.href)
 
@@ -23,7 +22,7 @@ if (onMainPage) {
 
   for (let location of locations) {
     document.getElementById(`${location.name}`).addEventListener('click', () => {
-      currentLocation = this.location.name
+      localStorage.setItem('currentLocation', `${location.name}`);
       //console.log("Why is this not updating")
       window.location.href = './location.html'
     })
@@ -33,6 +32,7 @@ if (onMainPage) {
       console.log(position);
       const lat = position.coords.latitude;
       const lng = position.coords.longitude;
+      const newInRange = [];
 
       for (let location of locations) {
         const dist = distance(degToRad(lat), degToRad(lng), degToRad(location.latitude), degToRad(location.longitude))
@@ -43,12 +43,13 @@ if (onMainPage) {
             // node.textContent = `Review ${location.name}`
             // node.setAttribute('class', 'review')
             // document.getElementById(`${location.name}`).appendChild(node)
-            inRange[location.name] = true;
+            newInRange[location.name] = true;
         } else {
+            newInRange[location.name] = false;
             //restricted access
         }
+        localStorage.setItem('inRange', `${newInRange}`)
       }
-      
     };
     
     const errorCallback = (error) => {

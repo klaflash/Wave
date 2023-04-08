@@ -22,8 +22,9 @@ if (onMainPage) {
 
   for (let location of locations) {
     document.getElementById(`${location.name}`).addEventListener('click', () => {
+      console.log(`${location.name}`)
       localStorage.setItem('currentLocation', `${location.name}`);
-      //console.log("Why is this not updating")
+      console.log("Why is this not updating")
       window.location.href = './location.html'
     })
   }
@@ -48,6 +49,7 @@ if (onMainPage) {
             newInRange[location.name] = false;
             //restricted access
         }
+        console.log(newInRange)
         localStorage.setItem('inRange', `${newInRange}`)
       }
     };
